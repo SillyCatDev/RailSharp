@@ -1,0 +1,129 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#inline_comment"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"begin": "\\b(package)\\b\\s*",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.package.bytw"
+				}
+			},
+			"end": "\\s*(;)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.terminator.bytw"
+				}
+			}
+		},
+		{
+			"begin": "\\b(import)\\b\\s*",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.import.bytw"
+				}
+			},
+			"end": "\\s*(;)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.terminator.bytw"
+				}
+			}
+		},
+		{
+			"name": "support.class",
+			"begin": "<",
+			"end": ">"
+		},
+		{
+			"include": "#operators"
+		},
+		{"include": "#comments"}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.bytw",
+					"match": "((?://).*)$"
+				},
+				{
+					"name": "comment.block.bytw",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.bytw",
+					"match": "\\b(class|void|asm|if|while|for|return|ForEach|recurse|catch|define|def|ref|new|Object|Executable|exec|cat|private|public|protected|partial|static|moveable|pushable|boolean|end|break|proceed|meow|math|add|sub|divide|times|emodamage|Deal-EmotionalDamage)\\b"
+				},
+				{
+					"name": "keyword.operator",
+					"match": "\\b(true|false|null|in|isn|isor|sor|print|println|&&|and)\\b"
+				},
+				{
+					"name": "storage.type.bytw",
+					"match": "\\b(enum|const|func|procedure|type|bit|nibbl|byte|int|float|short|long|array|char)\\b"
+				},
+				{
+					"name": "keyword.operator",
+					"match": "\\b(extends|ech|fork|mor|lor)\\b"
+				},
+				{
+					"name": "support.type",
+					"match": "@Override"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.bytw",
+					"match": "\\\\."
+				},
+				{
+					"name": "string.quoted.single.bytw",
+					"begin": "\\'",
+					"end": "\\'"
+				},
+				{
+					"name": "string.quoted.double.bytw",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.other.bytw",
+					"begin": "\\`",
+					"end": "\\`"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"match": "(?<=^|\\s|=)(0[xX][0-9A-Fa-f]*|[+-]?\\d+)(?=$|\\s|<|>)",
+					"name": "constant.numeric.bytw"
+				}
+			]
+		}
+	},
+	"scopeName": "source.meowbyt"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "meowmi",
+    "displayName": "Meowmi",
+    "description": "A simple extension that adds support for the Meowmi / CBYTS language",
+    "icon": "./img/icon.png",
+    "version": "1.0.2",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bytw",
+            "aliases": ["Meowbits", "bytw"],
+            "extensions": [".byt","bytw"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bytw",
+            "scopeName": "source.meowbyt",
+            "path": "./syntaxes/bytw.tmLanguage.json"
+        }]
+    }
+}
